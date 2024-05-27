@@ -76,6 +76,7 @@ function App() {
             <>
                 <h1>Wordle</h1>
                 <h2>Congratulations! You guessed the word correctly!</h2>
+                <button onClick={reset}>Play again</button>
             </>
         );
     } else {
