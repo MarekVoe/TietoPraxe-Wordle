@@ -6,6 +6,8 @@ import './App.css';
 function App() {
     const [guesses, setGuesses] = useState([]);
     const [inputValue, setInputValue] = useState('');
+    const [guessWord, setGuessWord] = useState('Test');
+
 
     const handleAddGuess = () => {
         if (inputValue.trim()) {
@@ -14,9 +16,16 @@ function App() {
         }
     };
 
+    function getLetterColor(index, guess) {
+        if(guess[index] === guessWord.toLowerCase()[index]) {
+            return "green";
+        }
+        return "white";
+    }
+
     return (
         <>
-            <h1>Wordle</h1>
+            <h1>Wordle - {guessWord}</h1>
             <div className="input-container">
                 <input
                     type="text"
@@ -31,7 +40,7 @@ function App() {
                         <li key={index}>
                             <ul className="letter-list">
                                 {guess.split('').map((letter, idx) => (
-                                    <li key={idx} className="letter-item">{letter}</li>
+                                    <li key={idx} className="letter-item" style={{color: getLetterColor(idx, guess, guessWord)}}>{letter}</li>
                                 ))}
                             </ul>
                         </li>
