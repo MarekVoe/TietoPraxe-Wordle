@@ -34,6 +34,14 @@ function App() {
         }
     };
 
+    function reset() {
+        setGuesses([]);
+        setInputValue('');
+        setGuessWord('');
+        setCurrentGuess(1);
+        setWordGuessed(false);
+    }
+
     function getLetterColor(index, guess) {
         if (guess.toLowerCase()[index] === guessWord.toLowerCase()[index]) {
             return "green";
@@ -66,15 +74,16 @@ function App() {
     } else if (wordGuessed) {
         return (
             <>
-                <h1>Wordle - {guessWord}</h1>
+                <h1>Wordle</h1>
                 <h2>Congratulations! You guessed the word correctly!</h2>
             </>
         );
     } else {
         return (
             <>
-                <h1>Wordle - {guessWord}</h1>
+                <h1>Wordle</h1>
                 <h2>Sorry, you have run out of guesses! The word was {guessWord}</h2>
+                <button onClick={reset}>Try again</button>
             </>
         );
     }
