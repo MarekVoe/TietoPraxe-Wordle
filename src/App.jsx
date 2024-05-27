@@ -48,7 +48,7 @@ function App() {
         } else if (guessWord.includes(guess[index])) {
             return "yellow"
         }
-        return "white";
+        return "black";
     }
 
     if (currentGuess <= maxGuesses && !wordGuessed) {

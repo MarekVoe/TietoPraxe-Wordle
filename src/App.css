@@ -27,11 +27,10 @@
 
 .letter-item {
   margin-right: 5px;
-  color: white;
   width: 80px;
   height: 80px;
+  background-color: #d1d1d1;
   font-size: 40px;
-  background-color: #212121;
   text-align: center;
   align-content: center;
   text-transform: uppercase;
